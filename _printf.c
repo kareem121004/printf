@@ -1,33 +1,30 @@
 #include "main.h"
 
-/**
- * struct FormatSpecifier - struct for specifiers
- * @specifier: format specifier
- * @handler: hndle pointer
-*/
 
-FormatSpecifier format_specifier[] =
-{
-	{'c', handle_char},
-	{'s', handle_string},
-	{'d', handle_int},
-	{'i', handle_int}
-};
 
 /**
  * _printf - print all
  * @format: format string
+ * Return: num
 */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
+
 	va_start(args, format);
 
-	int printed_chars = 0i;
+	FormatSpecifier format_specifier[] = {
+		{'c', handle_char},
+		{'s', handle_string},
+		{'d', handle_int},
+		{'i', handle_int}
+	};
+
+	int printed_chars = 0;
 	int i;
 
-	while(*format != '\0')
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
