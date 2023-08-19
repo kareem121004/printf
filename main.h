@@ -3,6 +3,8 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
 
 /**
  * struct FormatSpecifier - struct specifier
@@ -17,9 +19,10 @@ typedef struct
 } FormatSpecifier;
 
 int _printf(const char *format, ...);
-void handle_char(va_list args);
-void handle_int(va_list args);
-void handle_string(va_list args);
+int handle_char(va_list args);
+int handle_int(va_list args);
+int handle_string(va_list args);
+int handle_percent(va_list args);
 
 int print_binary(va_list list);
 char *itoa(long int, int);
