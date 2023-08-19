@@ -18,7 +18,9 @@ int _printf(const char *format, ...)
 		{'c', handle_char},
 		{'s', handle_string},
 		{'d', handle_int},
-		{'i', handle_int}
+		{'i', handle_int},
+		{'%', handle_percent},
+		{'\0', NULL}
 	};
 
 	int printed_chars = 0;

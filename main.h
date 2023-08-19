@@ -13,7 +13,7 @@
 typedef struct
 {
 	char specifier;
-	void (*handler)(va_list);
+	int (*handler)(va_list);
 } FormatSpecifier;
 
 int _printf(const char *format, ...);
