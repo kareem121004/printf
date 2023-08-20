@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 	va_list args;
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	printed_chars = 0;

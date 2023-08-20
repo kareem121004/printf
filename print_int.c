@@ -22,9 +22,8 @@ int handle_int(va_list args)
 		_putchar('0');
 		return (1);
 	}
-
 	divisor = 1;
-        printed_chars= 0;
+	printed_chars = 0;
 
 	while (num / divisor > 0)
 	{
