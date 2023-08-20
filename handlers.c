@@ -39,7 +39,9 @@ int handle_string(va_list args)
 
 	if (str == NULL)
 		str = "(null)";
-	int count = 0;
+	int count;
+
+	count = 0;
 
 	while (*str)
 	{
@@ -70,6 +72,7 @@ int handle_int(va_list args)
 		_putchar('0');
 		return (1);
 	}
+
 	int divisor = 1;
 	int printed_chars = 0;
 

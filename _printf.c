@@ -10,7 +10,10 @@
 
 int _printf(const char *format, ...)
 {
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 	va_list args;
+	int printed_chars = 0, i;
 
 	va_start(args, format);
 
@@ -22,10 +25,6 @@ int _printf(const char *format, ...)
 		{'%', handle_percent},
 		{'\0', NULL}
 	};
-
-	int printed_chars = 0;
-	int i;
-
 	while (*format != '\0')
 	{
 		if (*format == '%')
