@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		{'d', handle_int},
 		{'i', handle_int},
 		{'%', handle_percent},
-		{'\0', NULL}
+		{NULL, NULL}
 	};
 	while (*format != '\0')
 	{
