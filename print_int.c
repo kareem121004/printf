@@ -8,7 +8,9 @@
 
 int handle_int(va_list args)
 {
-	int num = va_args(args, int);
+	char digit;
+	int num = va_arg(args, int);
+	int divisor, printed_chars;
 
 	if (num < 0)
 	{
@@ -21,8 +23,8 @@ int handle_int(va_list args)
 		return (1);
 	}
 
-	int divisor = 1;
-	int printed_chars = 0;
+	divisor = 1;
+        printed_chars= 0;
 
 	while (num / divisor > 0)
 	{
@@ -33,7 +35,7 @@ int handle_int(va_list args)
 	{
 		divisor /= 10;
 
-		char digit = '0' + num / divisor;
+		digit = '0' + num / divisor;
 
 		_putchar(digit);
 		num %= divisor;

@@ -25,10 +25,10 @@ int handle_int(va_list args);
 int handle_string(va_list args);
 int handle_percent(va_list args);
 
-//int print_binary(va_list list);
-//char *itoa(long int, int);
-//int print(char *s);
+int print_binary(va_list list);
+char *itoa(long int, int);
+int print(char *s);
 
 int _putchar(char c);
-//int buffer(char c);
+int buffer(char c);
 #endif

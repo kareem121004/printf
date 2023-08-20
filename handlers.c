@@ -35,11 +35,11 @@ int handle_percent(va_list args)
 
 int handle_string(va_list args)
 {
+	int count;
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(null)";
-	int count;
 
 	count = 0;
 
