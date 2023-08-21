@@ -24,4 +24,6 @@ int handle_percent(va_list args);
 int _putchar(char c);
 void print_bin(unsigned int bi, int *size);
 int handle_binary(va_list bin);
+void print_oct(unsigned int o, int *size);
+int handle_octal(va_list oct);
 #endif
