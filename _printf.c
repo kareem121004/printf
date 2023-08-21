@@ -67,6 +67,7 @@ int _printf(const char *format, ...)
 		{"d", handle_int},
 		{"i", handle_int},
 		{"b", handle_binary},
+		{"o", handle_octal},
 		{'\0', NULL}
 	};
 
