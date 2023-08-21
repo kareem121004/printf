@@ -12,7 +12,7 @@
 * @handler: pointer to the handlers
 */
 
-typedef struct
+typedef struct FormatSpecifier_t
 {
 	char *specifier;
 	int (*handler)();
