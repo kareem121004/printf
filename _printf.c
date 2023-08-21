@@ -27,7 +27,7 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 					break;
 				}
 
-				else if (format[i] == *(format_specifier[j].specifier))
+				else if (*(format_specifier[j].specifier) == format[i])
 				{
 					printed_chars += format_specifier[j].handler(args);
 					if (printed_chars == -1)
