@@ -13,11 +13,9 @@ int handle_string(va_list args)
 
 	if (str == NULL)
 		str = "(null)";
-	while (*str)
+	while (str[count] != '\0')
 	{
-		_putchar(*str);
-		str++;
-		count++;
+		count += _putchar(str[count]);
 	}
 	return (count);
 }
