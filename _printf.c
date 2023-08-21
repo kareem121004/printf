@@ -19,7 +19,7 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 			i++;
 			j = 0;
 
-			while (format_specifier[j].specifier != NULL)
+			while (format_specifier[j].specifier != '\0')
 			{
 				if (format[i] == '%')
 				{
