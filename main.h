@@ -15,7 +15,7 @@
 typedef struct
 {
 	char specifier;
-	int (*handler)(va_list);
+	int (*handler)();
 } FormatSpecifier;
 
 int _printf(const char *format, ...);

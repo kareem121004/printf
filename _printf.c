@@ -19,7 +19,7 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 			i++;
 			j = 0;
 
-			while (format_specifier[j].specifier != NULL)
+			while (format_specifier[j].specifier != '\0')
 			{
 				if (format[i] == '%')
 				{
@@ -37,7 +37,7 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 				j++;
 			}
 
-			if (format_specifier[j].specifier == NULL)
+			if (format_specifier[j].specifier == '\0')
 			{
 				printed_chars += _putchar('%');
 				printed_chars += _putchar(format[i]);
@@ -65,7 +65,7 @@ int _printf(const char *format, ...)
 		{'c', handle_char},
 		{'s', handle_string},
 		{'d', handle_int},
-		{'i', handle_int},
+		{'i', handle_int},	
 		{'\0', NULL}
 	};
 
