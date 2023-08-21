@@ -1,31 +1,28 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+#include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 /**
 * struct format - struct checking letter
-* @let: letter
-* @check: checking functoin.
+* @specifier: format specifier
+* @handler: pointer to the handlers
 */
-typedef struct format
+
+typedef struct
 {
-	char let;
-	int (*check)(va_list arg);
-} format_t;
+	char specifier;
+	int (*handler)(va_list);
+} FormatSpecifier;
 
-int print_string(va_list s);
-int print_char(va_list c);
-int print_int(va_list s);
-int print_binary(va_list b);
-int print_octol(va_list b);
-int print_hex_upp(va_list b);
-int print_hex_low(va_list b);
-int print_unsigned(va_list u);
-int print_rev(va_list strings);
-int print_rot13(va_list s);
-int print_String(va_list s);
-int print_pointer(va_list ptr);
-
+int _printf(const char *format, ...);
+int handle_char(va_list args);
+int handle_string(va_list args);
+int handle_int(va_list args);
+int handle_percent(va_list args);
 int _putchar(char c);
 
 #endif 

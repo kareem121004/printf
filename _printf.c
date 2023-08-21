@@ -1,92 +1,81 @@
+#include "main.h"
+
 /**
-* checking_format - check to found argument
-* @c: char
-* Return: size
+ * handle - check specifier
+ * @format: passed string
+ * @args: arguments
+ * @format_specifier: struct
+ * Return: num
 */
-int checking_format(char c)
-{
-	if (c == '%')
-	{
-		_putchar('%');
-		return (1);
-	}
-	return (0);
-}
 
-int check_arg(va_list arg, char *format, format_t *smle)
+int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 {
-	int i = 0, j = 0, size = 0;
+	int printed_chars = 0, i = 0, j;
 
-	while (format[i])
+	while (format[i] != '\0')
 	{
-		while (format[i] && format[i] != '%')
-		{
-			_putchar(format[i]);
-			++i;
-			size++;
-		}
-		j = 0;
 		if (format[i] == '%')
 		{
 			i++;
-			size += checking_format(format[i]);
-			if (format[i] == '\0')
-				return (-1);
-		}
-		while (smle[j].letter != '\0')
-		{
-			if (smle[j].letter == format[i])
+			j = 0;
+
+			while (format_specifier[j].specifier != NULL)
 			{
-				size += smble[j].check(arg);
-				break;
+				if (format[i] == '%')
+				{
+					printed_chars += _putchar('%');
+					break;
+				}
+
+				else if (format[i] == format_specifier[j].specifier)
+				{
+					printed_chars += format_specifier[j].handler(args);
+					if (printed_chars == -1)
+						return (-1);
+					break;
+				}
+				j++;
 			}
-			j++;
-		}
-		if (format[i])
-		{
-			if (symbole[j].letter == '\0' && format[i] != '%')
+
+			if (format_specifier[j].specifier == NULL)
 			{
-				_putchar('%');
-				_putchar(format[i]);
-				size += 2;
+				printed_chars += _putchar('%');
+				printed_chars += _putchar(format[i]);
 			}
-			i++;
 		}
+		else
+			printed_chars += _putchar(format[i]);
+		i++;
 	}
-	return (size);
+	return (printed_chars);
 }
 
 /**
-* _printf - print a format string
-* @format: string with format
-* Return: size of characters.
+ * _printf - print all
+ * @format: string
+ * Return: num or -1
 */
 
 int _printf(const char *format, ...)
 {
-	int po;
+	int printed_chars = 0;
 	va_list args;
-	format_t smle[] = {
-		{'s', print_string},
-		{'c', print_char},
-		{'d', print_integer},
-		{'i', print_integer},
-		{'b', print_binary},
-		{'o', print_octol},
-		{'x', print_hex_low},
-		{'X', print_hex_upp},
-		{'u', print_unsigned},
-		{'r', print_rev},
-		{'R', print_rot13},
-		{'S', print_String},
-		{'p', print_pointer},
-		{'\0', NULL},
+
+	FormatSpecifier format_specifier[] = {
+		{'c', handle_char},
+		{'s', handle_string},
+		{'d', handle_int},
+		{'i', handle_int},
+		{'%', handle_percent},
+		{NULL, NULL}
 	};
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(args, format);
-	po = check_arg(args, (char *)format, smle);
+
+	printed_chars = handle(format, args, format_specifier);
+
 	va_end(args);
-	return (po);
+	return (printed_chars);
 }
