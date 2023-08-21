@@ -1,3 +1,4 @@
+#include "main.h"
 /**
 * handle_binary - prints binary number
 * @a: va_list
