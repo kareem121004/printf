@@ -2,9 +2,6 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
-#include <limits.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 /**
 * struct format - struct checking letter
@@ -12,7 +9,7 @@
 * @handler: pointer to the handlers
 */
 
-typedef struct FormatSpecifier_t
+typedef struct
 {
 	char *specifier;
 	int (*handler)();
