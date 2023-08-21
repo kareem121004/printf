@@ -18,6 +18,7 @@ typedef struct
 	int (*handler)(va_list);
 } FormatSpecifier;
 
+void handle_octal(unsigned int n, int *size);
 int _printf(const char *format, ...);
 int handle_char(va_list args);
 int handle_string(va_list args);
