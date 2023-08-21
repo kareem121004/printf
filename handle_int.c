@@ -1,42 +1,46 @@
 #include "main.h"
 
 /**
+* print_num - print number in output
+* @digit: number
+* @size: pointer size
+* Return: void
+*/
+
+void print_num(int digit, int *size)
+{
+	unsigned int number;
+
+	if (digit < 0)
+	{
+		digit *= -1;
+		*size += 1;
+		_putchar('-');
+	}
+	number = digit;
+	if (number / 10)
+	{
+		print_num(number / 10, size);
+	}
+	*size += 1;
+	_putchar((number % 10) + '0');
+
+}
+
+
+
+/**
  * handle_int - integer
  * @args: pointer
- * Return: printed_chars
+ * Return: digit
 */
 
 int handle_int(va_list args)
 {
-	char digit;
-	int num = va_arg(args, int);
-	int divisor, printed_chars;
+	int digit = 0;
+	int num;
 
-	if (num < 0)
-	{
-		_putchar('-');
-		num = -num;
-	}
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
-	divisor = 1;
-	printed_chars = 0;
-
-	while (num / divisor > 0)
-	{
-		divisor *= 10;
-	}
-
-	while (divisor > 1)
-	{
-		divisor /= 10;
-		digit = '0' + num / divisor;
-		_putchar(digit);
-		num %= divisor;
-		printed_chars++;
-	}
-	return (printed_chars);
+	num = va_arg(args, int);
+	print_num(num, &digit);
+	return (digit);
 }
