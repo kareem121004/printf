@@ -1,12 +1,15 @@
 /**
-* print_octal - prints the octal number
-* @list: va_list
-* Return: the number
+* print_octal - octal number
+* @nu:number
+* @size: sizefor print
 */
-int print_octal(va_list list)
+#include "main.h"
+void print_octal(unsigned int nu, int *size)
 {
-	int n = 0;
-	handle_octal(va_arg(list, unsigned int)&n);
-
-	return (n);
+	if (n / 8)
+	{
+		print_octal(n / 8, size);
+	}
+	size += 1;
+	_putchar('0' + n % 8);
 }

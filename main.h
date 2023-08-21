@@ -18,8 +18,10 @@ typedef struct
 	int (*handler)(va_list);
 } FormatSpecifier;
 
-int print_octal(va_list list);
-void handle_octal(unsigned int n, int *size);
+int handle_binary(va_list a);
+void print_binary(unsigned int nu, int *size);
+int handle_octal(va_list list);
+void print_octal(unsigned int nu, int *size);
 int _printf(const char *format, ...);
 int handle_char(va_list args);
 int handle_string(va_list args);
