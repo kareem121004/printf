@@ -66,8 +66,7 @@ int _printf(const char *format, ...)
 		{'s', handle_string},
 		{'d', handle_int},
 		{'i', handle_int},
-		{'%', handle_percent},
-		{NULL, NULL}
+		{'\0', NULL}
 	};
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
