@@ -1,3 +1,8 @@
+/**
+* handle_octal - octal number
+* @n:number
+* @size: sizefor print
+*/
 #include "main.h"
 void handle_octal(unsigned int n, int *size)
 {
