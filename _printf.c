@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 	FormatSpecifier format_specifier[] = {
 		{"c", handle_char},
 		{"s", handle_string},
-		{'\0', NULL}
+		{NULL, NULL}
 	};
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
