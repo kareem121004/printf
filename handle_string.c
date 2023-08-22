@@ -2,7 +2,7 @@
 
 /**
  * handle_string - string
- * @args: pointer
+ * @args: arguments
  * Return: count
 */
 
