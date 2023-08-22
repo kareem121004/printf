@@ -72,6 +72,7 @@ int _printf(const char *format, ...)
 		{"X", handle_HEX},
 		{"u", handle_unsigned},
 		{"R", handle_rot13},
+		{"r", handle_rev_str},
 		{'\0', NULL}
 	};
 
