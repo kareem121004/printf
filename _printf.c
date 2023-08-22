@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * handle - check specifier
- * @format: passed string
+ * handle - checking specifier
+ * @format: string
  * @args: arguments
  * @format_specifier: struct
  * Return: num
@@ -79,4 +79,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (printed_chars);
 }
-
