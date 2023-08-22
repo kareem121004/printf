@@ -11,7 +11,7 @@
 
 typedef struct
 {
-	char specifier;
+	char *specifier;
 	int (*handler)();
 } FormatSpecifier;
 

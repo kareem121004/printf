@@ -19,7 +19,7 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 			i++;
 			j = 0;
 
-			while (format_specifier[j].specifier != '\0')
+			while (format_specifier[j].specifier != NULL)
 			{
 				if (format[i] == '%')
 				{
@@ -27,7 +27,7 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 					break;
 				}
 
-				else if (format_specifier[j].specifier == format[i])
+				else if (*(format_specifier[j].specifier) == format[i])
 				{
 					printed_chars += format_specifier[j].handler(args);
 					if (printed_chars == -1)
@@ -62,18 +62,18 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	FormatSpecifier format_specifier[] = {
-		{'c', handle_char},
-		{'s', handle_string},
-		{'d', handle_int},
-		{'i', handle_int},
-		{'b', handle_binary},
-		{'o', handle_octal},
-		{'x', handle_hex},
-		{'X', handle_HEX},
-		{'u', handle_unsigned},
-		{'R', handle_rot13},
-		{'r', handle_rev_str},
-		{NULL, NULL}
+		{"c", handle_char},
+		{"s", handle_string},
+		{"d", handle_int},
+		{"i", handle_int},
+		{"b", handle_binary},
+		{"o", handle_octal},
+		{"x", handle_hex},
+		{"X", handle_HEX},
+		{"u", handle_unsigned},
+		{"R", handle_rot13},
+		{"r", handle_rev_str},
+		{'\0', NULL}
 	};
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
