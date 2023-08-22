@@ -1,15 +1,17 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
+#include <stdarg.h>
+#include <stdlib.h>
 
 /**
-* struct format - struct checking letter
+* struct format_o - struct checking letter
 * @specifier: format specifier
 * @handler: pointer to the handlers
 */
-
-typedef struct
+typedef struct format_o
 {
 	char *specifier;
 	int (*handler)();
@@ -24,14 +26,6 @@ int handle_percent(va_list args);
 int _putchar(char c);
 void print_bin(unsigned int bi, int *size);
 int handle_binary(va_list bin);
-void print_oct(unsigned int o, int *size);
-int handle_octal(va_list oct);
-void print_hex(unsigned int hexa, int *size);
-int handle_hex(va_list hex);
-int handle_HEX(va_list HEX);
-void hexa_upp(unsigned int xx, int *size);
-void p_unsigned_num(unsigned int un, unsigned int *size);
-int handle_unsigned(va_list unsign);
 int handle_rot13(va_list args);
 int handle_rev_str(va_list args);
 #endif

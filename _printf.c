@@ -67,8 +67,7 @@ int _printf(const char *format, ...)
 		{"d", handle_int},
 		{"i", handle_int},
 		{"b", handle_binary},
-		{"r", handle_rev_str},
-		{'\0', NULL}
+		{NULL, NULL}
 	};
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
