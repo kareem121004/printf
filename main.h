@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 /**
-* struct format - struct checking letter
+* struct format- struct checking letter
 * @specifier: format specifier
 * @handler: pointer to the handlers
 */
@@ -21,6 +21,5 @@ int _printf(const char *format, ...);
 int handle_char(va_list args);
 int handle_string(va_list args);
 int handle_int(va_list args);
-void print_num(int digit, int *size);
 int _putchar(char c);
 #endif
