@@ -7,11 +7,11 @@
 #include <stdlib.h>
 
 /**
-* struct format_o - struct checking letter
+* struct format - struct checking letter
 * @specifier: format specifier
 * @handler: pointer to the handlers
 */
-typedef struct format_o
+typedef struct format
 {
 	char *specifier;
 	int (*handler)();
