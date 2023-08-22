@@ -30,6 +30,6 @@ void print_hex(unsigned int hexa, int *size);
 int handle_hex(va_list hex);
 void print_HEX(unsigned int HEXA, int *size);
 int handle_HEX(va_list HEX);
-void p_unsigned_number(int unsigned un, unsigned int *size);
+void p_unsigned_number(unsigned int un, unsigned int *size);
 int handle_unsigned(va_list unsign);
 #endif
