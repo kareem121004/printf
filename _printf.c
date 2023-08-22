@@ -37,7 +37,7 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 				j++;
 			}
 
-			if (format_specifier[j].specifier == '\0')
+			if (format_specifier[j].specifier == NULL)
 			{
 				printed_chars += _putchar('%');
 				printed_chars += _putchar(format[i]);
