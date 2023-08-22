@@ -1,3 +1,4 @@
 # printf project
 * printf functoin
-* printing som digits
+* printing some digits
+* printing binary
