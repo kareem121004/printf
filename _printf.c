@@ -66,7 +66,6 @@ int _printf(const char *format, ...)
 		{"s", handle_string},
 		{"d", handle_int},
 		{"i", handle_int},
-		{"b", handle_binary},
 		{NULL, NULL}
 	};
 
