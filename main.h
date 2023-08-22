@@ -21,6 +21,7 @@ int handle_string(va_list args);
 int handle_int(va_list args);
 void print_num(int digit, int *size);
 int handle_percent(va_list args);
+int handle_binary(va_list bin);
 int _putchar(char c);
 #endif
 
