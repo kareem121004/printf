@@ -67,3 +67,30 @@ int handle_HEX(va_list HEX)
 	print_hex(va_arg(HEX, unsigned int), &hE);
 	return (hE);
 }
+
+/**
+* hexa_upp - from decimal to hexadecimal upper
+* @xx: number
+* @size: size of printing
+*/
+
+void hexa_upp(unsigned int xx, int *size)
+{
+	int xa = 1;
+
+	if (xx / 16)
+	{
+		print_HEX(xx / 16, size);
+	}
+	if (xa == 1)
+	{
+		_putchar('0');
+		*size += 1;
+	}
+	*size += 1;
+	if (xx % 16 < 10)
+		_putchar('0' + xx % 16);
+	else
+		_putchar('A' + ((xx % 16) - 10));
+	xa = 0;
+}

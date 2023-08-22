@@ -1,16 +1,16 @@
 #include "main.h"
 
 /**
-* p_unsigned_number - prints unsigned in output
+* p_unsigned_num - prints unsigned in output
 * @size: size pf printing
 * @un: integer
 * Return: void
 */
-void p_unsigned_number(unsigned int un, unsigned int *size)
+void p_unsigned_num(unsigned int un, unsigned int *size)
 {
 	if (un / 10)
 	{
-		p_unsigned_number(un / 10, size);
+		p_unsigned_num(un / 10, size);
 	}
 	*size += 1;
 	_putchar((un % 10) + '0');
@@ -26,6 +26,6 @@ int handle_unsigned(va_list unsign)
 {
 	unsigned int uns = 0;
 
-	p_unsigned_number(va_arg(unsign, unsigned int), &uns);
+	p_unsigned_num(va_arg(unsign, unsigned int), &uns);
 	return (uns);
 }
