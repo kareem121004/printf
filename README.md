@@ -2,3 +2,4 @@
 * printf functoin
 * printing some digits
 * printing binary
+* print string in reverse
