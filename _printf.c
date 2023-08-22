@@ -68,6 +68,9 @@ int _printf(const char *format, ...)
 		{"i", handle_int},
 		{"b", handle_binary},
 		{"o", handle_octal},
+		{"x", handle_hex},
+		{"X", handle_HEX},
+		{"u", handle_unsigned},
 		{'\0', NULL}
 	};
 
