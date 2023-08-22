@@ -64,8 +64,6 @@ int _printf(const char *format, ...)
 	FormatSpecifier format_specifier[] = {
 		{"c", handle_char},
 		{"s", handle_string},
-		{"d", handle_int},
-		{"i", handle_int},
 		{NULL, NULL}
 	};
 
