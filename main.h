@@ -19,8 +19,8 @@ typedef struct
 int _printf(const char *format, ...);
 int handle_char(va_list args);
 int handle_string(va_list args);
-int handle_int(va_list args);
 void print_num(int digit, int *size);
+int handle_int(va_list args);
 int handle_percent(va_list args);
 int handle_binary(va_list bin);
 int handle_rev_str(va_list args);
