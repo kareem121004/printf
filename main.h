@@ -32,4 +32,5 @@ int handle_HEX(va_list HEX);
 void hexa_upp(unsigned int xx, int *size);
 void p_unsigned_num(unsigned int un, unsigned int *size);
 int handle_unsigned(va_list unsign);
+int handle_rot13(va_list args);
 #endif
