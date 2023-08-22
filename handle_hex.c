@@ -35,26 +35,6 @@ int handle_hex(va_list hex)
 }
 
 /**
-* print_HEX - from number to hexadecimal in lowercase
-* @HEXA: number
-* @size: size
-* Return: void
-*/
-
-void print_HEX(unsigned int HEXA, int *size)
-{
-	if (HEXA / 16)
-	{
-		print_HEX(HEXA / 16, size);
-	}
-	*size += 1;
-	if (HEXA % 16 < 10)
-		_putchar('0' + HEXA % 16);
-	else
-		_putchar('A' + ((HEXA % 16) - 10));
-}
-
-/**
 * handle_HEX - print numbers in hexadecimal
 * @HEX: number
 * Return: the hexadecimal number
@@ -80,7 +60,7 @@ void hexa_upp(unsigned int xx, int *size)
 
 	if (xx / 16)
 	{
-		print_HEX(xx / 16, size);
+		hexa_upp(xx / 16, size);
 	}
 	if (xa == 1)
 	{
