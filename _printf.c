@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * handle - checking specifier
- * @format: string
- * @args: arguments
- * @format_specifier: struct
+ * handle - checking specifier.
+ * @format: string.
+ * @args: arguments.
+ * @format_specifier: struct.
  * Return: num
 */
 
