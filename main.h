@@ -26,4 +26,10 @@ void print_bin(unsigned int bi, int *size);
 int handle_binary(va_list bin);
 void print_oct(unsigned int o, int *size);
 int handle_octal(va_list oct);
+void print_hex(unsigned int hexa, int *size);
+int handle_hex(va_list hex);
+void print_HEX(unsigned int HEXA, int *size);
+int handle_HEX(va_list HEX);
+void p_unsigned_number(int unsigned un, unsigned int *size);
+int handle_unsigned(va_list unsign);
 #endif
