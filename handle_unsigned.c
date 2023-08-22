@@ -27,5 +27,5 @@ int handle_unsigned(va_list unsign)
 	unsigned int uns = 0;
 
 	p_unsigned_num(va_arg(unsign, unsigned int), &uns);
-	return (uns);
+	return (*size);
 }
