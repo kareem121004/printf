@@ -25,5 +25,6 @@ int handle_percent(va_list args);
 int handle_binary(va_list bin);
 int handle_rev_str(va_list args);
 int _putchar(char c);
+
 #endif
 
