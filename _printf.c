@@ -52,8 +52,8 @@ int handle(const char *format, va_list args, FormatSpecifier *format_specifier)
 }
 
 /**
- * _printf - print all
- * @format: string.
+ * _printf - print all functions
+ * @format: format string.
  *
  * Return: num or -1
 */
